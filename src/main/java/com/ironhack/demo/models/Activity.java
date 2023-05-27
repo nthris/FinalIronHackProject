@@ -17,7 +17,7 @@ public class Activity {
     @Enumerated(EnumType.STRING)
     @Column(name = "activity_status", columnDefinition="ENUM('AVAILABLE','NOT_AVAILABLE','WAITING_LIST')",nullable = false)
     private ActivityStatus activityStatus;
-    @OneToMany (mappedBy = "activity")
+    @OneToMany (mappedBy = "activity",cascade = CascadeType.ALL))
     @JsonIgnore
     private List <BookedActivity> bookedActivityList;
     @ManyToMany(mappedBy = "activities")
