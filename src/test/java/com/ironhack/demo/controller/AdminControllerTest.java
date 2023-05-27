@@ -136,8 +136,8 @@ public class AdminControllerTest {
     //REVISAR ESTE TEST
     @Test
     void shouldDeleteUser_WhenDeleteMethodIsCalled() throws Exception {
-        Long userId = 1L;
-        mockMvc.perform(delete("/delete-user/{id}",id))
-                .andExpect(status().isNoContent());
+    
+        mockMvc.perform(delete("/delete-user/1"))
+                .andExpect(status().isOk());
     }
 }
